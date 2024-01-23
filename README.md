@@ -4,7 +4,6 @@
 
 - 🏸 I enjoy doing badminton
 - 🎸 Play guitar for fun
-- 💻 Still learning to become a good software engineer
 
 <hr />
 
