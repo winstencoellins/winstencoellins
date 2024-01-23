@@ -1,11 +1,11 @@
 <h1 align="center">Hi 👋, I'm Winsten Coellins</h1>
-<h3 align="center">Software Developer | Django Framework | Next Js</h3>
+<h3 align="center">Software Engineer | Django Framework | Next Js</h3>
 
-- 🔭 I’m currently working on [ProjectX Mdn](projectx-mdn.com)
+- 🔭 I’m currently working on [ProjectX Mdn](https://projectx-mdn.com)
 
 - 📫 How to reach me **winstencoellins13@gmail.com**
 
-- 📄 Know about my experiences [https://winstencoellins.vercel.app](https://winstencoellins.vercel.app)
+- 📄 Know about my experiences [Winsten Coellins](https://winstencoellins.vercel.app)
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
