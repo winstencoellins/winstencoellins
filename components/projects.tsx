@@ -7,7 +7,7 @@ import Link from "next/link"
 
 export default function ProjectSection() {
     const projects = [
-        { title: "", desc: "", tech: [], demo: "" },
+        { title: "", desc: "", tech: [], demo: "", cover: "" },
     ]
 
     return (
