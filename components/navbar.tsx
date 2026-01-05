@@ -1,4 +1,4 @@
-import { MenuIcon } from 'lucide-react'
+"use client"
 
 import { Button } from '@/components/ui/button'
 import {
@@ -6,75 +6,101 @@ import {
   DropdownMenuContent,
   DropdownMenuGroup,
   DropdownMenuItem,
+  DropdownMenuSeparator,
   DropdownMenuTrigger
 } from '@/components/ui/dropdown-menu'
-import Link from 'next/link'
+
+import { handleClickScroll } from '@/lib/utils'
+
+import { Download, Menu } from 'lucide-react'
 
 const Navbar = () => {
     const navigationData = [
-        {
-            title: 'About',
-            href: '#'
-        },
-        {
-            title: 'Technical Skills',
-            href: '#'
-        },
-        {
-            title: 'Experience',
-            href: '#'
-        },
-        {
-            title: 'Projects',
-            href: '#'
-        }
-    ]
+      {
+        title: 'About',
+        id: 'about'
+      },
+      {
+        title: 'Technical Skills',
+        id: 'technical-skills'
+      },
+      {
+        title: 'Experience',
+        id: 'experience'
+      },
+      {
+        title: 'Projects',
+        id: 'projects'
+      },
+      {
+        title: 'Contact',
+        id: 'contact'
+      }
+  ]
+
+  const handleDownloadResume = () => {
+    const link = document.createElement('a')
+    link.href = './public/files/resume_winstencoellins.pdf'
+    link.download = 'winstencoellins_resume.pdf'
+    link.click()
+  }
 
   return (
-    <header className='bg-[#101622] sticky top-0 z-50'>
-      <div className='mx-auto flex max-w-7xl items-center justify-between gap-8 px-4 py-7 sm:px-6'>
-        <div className='text-muted-foreground flex flex-1 items-center gap-8 font-medium md:justify-center lg:gap-16'>
-          <Link href='#' className='hover:text-primary max-md:hidden'>
-            Home
-          </Link>
-          <Link href='#' className='hover:text-primary max-md:hidden'>
-            Products
-          </Link>
-          <Link href='#'>
-            WC
-          </Link>
-          <Link href='#' className='hover:text-primary max-md:hidden'>
-            About Us
-          </Link>
-          <Link href='#' className='hover:text-primary max-md:hidden'>
-            Contacts
-          </Link>
+    <header className='bg-[#101622] sticky top-0 z-50 py-5'>
+      <div className='w-11/12 mx-auto flex justify-between items-center md:max-w-3xl md:px-0 lg:max-w-7xl'>
+        <div>
+          <div className='md:flex md:items-center md:text-lg'>
+            <h3 className='bg-[#135bec] text-white px-1.5 py-1.5 rounded-lg font-bold md:mr-3 w-fit'>WC</h3>
+            <h3 className='font-bold text-white hidden md:block'>Winsten Coellins</h3>
+          </div>
+        </div>
+        
+        <div className='hidden lg:block'>
+          {
+            navigationData.map((item, index) => (
+              <Button key={index} variant="ghost" className='text-white font-semibold mx-2 hover:text-[#135bec] hover:cursor-pointer' onClick={() => handleClickScroll(item.id)}>
+                { item.title }
+              </Button>
+            ))
+          }
         </div>
 
-        <div className='flex items-center gap-6'>
-          {/* <Button variant='ghost' size='icon'>
-            <SearchIcon />
-            <span className='sr-only'>Search</span>
-          </Button> */}
+        <div className='hidden lg:block'>
+          <Button className='bg-[#135bec] text-white font-bold hover:bg-[#0f4bb8] hover:cursor-pointer' onClick={handleDownloadResume}>
+            <Download className='mr-2' />
+            Resume
+          </Button>
+        </div>
+
+        <div className='lg:hidden block'>
           <DropdownMenu>
-            <DropdownMenuTrigger className='md:hidden' asChild>
-              <Button variant='outline' size='icon'>
-                <MenuIcon />
-                <span className='sr-only'>Menu</span>
+            <DropdownMenuTrigger asChild>
+              <Button variant="ghost">
+                <Menu className='text-white w-20 h-30'/>
               </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent className='w-56' align='end'>
+            <DropdownMenuContent align="end" className='bg-[#101622] w-10 text-white border border-gray-800 px-2 text-sm'>
               <DropdownMenuGroup>
-                {navigationData.map((item, index) => (
-                  <DropdownMenuItem key={index}>
-                    <a href={item.href}>{item.title}</a>
-                  </DropdownMenuItem>
-                ))}
+                {
+                  navigationData.map((item, index) => (
+                    <DropdownMenuItem key={index} onClick={() => handleClickScroll(item.id)}>
+                      { item.title }
+                    </DropdownMenuItem>
+                  ))
+                }
+              </DropdownMenuGroup>
+              <DropdownMenuSeparator />
+              <DropdownMenuGroup className='py-1'>
+                <Button className='w-full bg-[#135bec]'>
+                  <Download className='' />
+                  Resume
+                </Button>
               </DropdownMenuGroup>
             </DropdownMenuContent>
           </DropdownMenu>
         </div>
       </div>
+
     </header>
   )
 }

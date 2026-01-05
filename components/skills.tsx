@@ -6,8 +6,8 @@ export default function SkillSection() {
     const backendSkills = ["FastAPI", "Node.js", "Express.js", "Hono.js", "Docker", "PostgreSQL", "Git", "Github", "AWS", "Azure"]
 
     return (
-        <div className="bg-[#101622]">
-            <div className="py-20 px-6 mx-auto md:px-0 md:max-w-2xl lg:max-w-5xl">
+        <div className="bg-[#101622] scroll-mt-20" id="technical-skills">
+            <div className="py-20 px-6 mx-auto md:px-0 md:max-w-3xl lg:max-w-5xl">
                 <h1 className="text-3xl font-bold text-center text-white">Technical Skills</h1>
 
                 <p className="text-center mt-4 mb-8 text-gray-400 md:max-w-sm md:mx-auto lg:max-w-md">A look at the technologies, tools, and languages I use to build robust products.</p>

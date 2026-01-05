@@ -37,8 +37,8 @@ export default function ContactSection() {
     ]
 
     return (
-        <div className="bg-gray-800">
-            <div className="py-20 px-6 mx-auto md:max-w-2xl md:flex md:flex-row md:items-center md:justify-between md:gap-x-5 md:items-center lg:max-w-5xl">
+        <div className="bg-gray-800 scroll-mt-20" id="contact">
+            <div className="py-20 px-6 mx-auto md:max-w-3xl md:flex md:px-0 md:flex-row md:justify-between md:gap-x-5 md:items-center lg:max-w-5xl lg:gap-x-10">
                 <div className="md:w-6/12">
                     <h1 className="text-3xl font-bold text-white">Let&apos;s work together</h1>
 
@@ -59,7 +59,7 @@ export default function ContactSection() {
                             ))
                         }
 
-                        <div className="flex items-center my-4">
+                        <div className="flex items-center mt-4">
                             <div className="bg-[#135bec]/20 text-[#135bec] px-3 py-3 rounded-lg mr-3">
                                 <Share2 />
                             </div>
@@ -96,7 +96,7 @@ export default function ContactSection() {
                                 { errors.message?.message && <p className="text-xs mt-1 text-red-500">{ errors.message.message }</p> }
                             </div>
 
-                            <Button type="submit" className="bg-[#135bec] mt-5">Submit</Button>
+                            <Button type="submit" className="bg-[#135bec] mt-5 hover:bg-[#0f4bb8] hover:cursor-pointer">Submit</Button>
                         </form>
                     </CardContent>
                 </Card>
