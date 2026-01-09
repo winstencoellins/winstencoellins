@@ -12,6 +12,7 @@ import { Mail, MapPin, Share2 } from "lucide-react"
 import { Button } from "./ui/button"
 import { Textarea } from "./ui/textarea"
 import clsx from "clsx"
+import { toast } from "sonner"
 
 type FormValues = {
     name: string,
@@ -22,8 +23,20 @@ type FormValues = {
 export default function ContactSection() {
     const { register, handleSubmit, formState: { errors }, } = useForm<FormValues>()
 
-    const onSubmit: SubmitHandler<FormValues> = (data) => {
-        console.log(data)
+    const onSubmit: SubmitHandler<FormValues> = async (data) => {
+        const response = await fetch('/api/send-email', {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        })
+
+        const result = await response.json()
+
+        if (result.success) {
+            toast.success(result.message)
+        }
     }
 
     const general = [
