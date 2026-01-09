@@ -13,6 +13,7 @@ import {
 import { handleClickScroll } from '@/lib/utils'
 
 import { Download, Menu } from 'lucide-react'
+import Link from 'next/link'
 
 const Navbar = () => {
     const navigationData = [
@@ -54,7 +55,7 @@ const Navbar = () => {
             <h3 className='font-bold text-white hidden md:block'>Winsten Coellins</h3>
           </div>
         </div>
-        
+
         <div className='hidden lg:block'>
           {
             navigationData.map((item, index) => (
@@ -66,9 +67,11 @@ const Navbar = () => {
         </div>
 
         <div className='hidden lg:block'>
-          <Button className='bg-[#135bec] text-white font-bold hover:bg-[#0f4bb8] hover:cursor-pointer' onClick={handleDownloadResume}>
-            <Download className='mr-2' />
-            Resume
+          <Button className='bg-[#135bec] text-white font-bold hover:bg-[#0f4bb8] hover:cursor-pointer' asChild>
+            <Link href="/files/resume_winstencoellins.pdf" download={true}>
+              <Download className='mr-2' />
+              Resume
+            </Link>
           </Button>
         </div>
 

@@ -11,6 +11,7 @@ import { Input } from "./ui/input"
 import { Mail, MapPin, Share2 } from "lucide-react"
 import { Button } from "./ui/button"
 import { Textarea } from "./ui/textarea"
+import clsx from "clsx"
 
 type FormValues = {
     name: string,
@@ -82,17 +83,17 @@ export default function ContactSection() {
                         <form onSubmit={handleSubmit(onSubmit)}>
                             <div className="mt-4">
                                 <Label htmlFor="name" className="mb-2 text-white">Name</Label>
-                                <Input { ...register("name", { required: "Name is required." }) } placeholder="John Doe" className="bg-gray-800 text-gray-400 border border-[#101622]" />
+                                <Input { ...register("name", { required: "Name is required." }) } placeholder="John Doe" className={clsx("bg-gray-800 text-gray-400 border border-[#101622]", errors.name?.message ? "border-red-500" : "")} />
                                 { errors.name?.message && <p className="text-xs mt-1 text-red-500">{ errors.name.message }</p> }
                             </div>
                             <div className="mt-4">
                                 <Label htmlFor="email" className="mb-2 text-white">Email</Label>
-                                <Input { ...register("email", { required: "Email is required.", pattern: { value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, message: "Invalid email address" } }) } placeholder="johndoe@example.com" className="bg-gray-800 text-gray-400 border border-[#101622]" />
+                                <Input { ...register("email", { required: "Email is required.", pattern: { value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, message: "Invalid email address" } }) } placeholder="johndoe@example.com" className={clsx("bg-gray-800 text-gray-400 border border-[#101622]", errors.email?.message ? "border-red-500" : "")} />
                                 { errors.email?.message && <p className="text-xs mt-1 text-red-500">{ errors.email.message }</p> }
                             </div>
                             <div className="mt-4">
                                 <Label htmlFor="message" className="mb-2 text-white">Message</Label>
-                                <Textarea { ...register("message", { required: "Message is required." })} placeholder="Enter message here." className="bg-gray-800 text-gray-400 border border-[#101622]" />
+                                <Textarea { ...register("message", { required: "Message is required." })} placeholder="Enter message here." className={clsx("bg-gray-800 text-gray-400 border border-[#101622]", errors.message?.message ? "border-red-500" : "")} />
                                 { errors.message?.message && <p className="text-xs mt-1 text-red-500">{ errors.message.message }</p> }
                             </div>
 
