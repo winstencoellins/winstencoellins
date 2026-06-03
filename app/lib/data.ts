@@ -13,9 +13,9 @@ export const site = {
     "Fullstack engineer shipping APIs, interfaces, and data-backed products.",
   contactBlurb:
     "Open to full-time roles, contract work, and collaborations on web apps, APIs, and data-driven products.",
-  email: "hello@winstencoellins.com",
-  linkedin: "https://linkedin.com",
-  github: "https://github.com",
+  email: "winstencoellins13@gmail.com",
+  linkedin: "https://linkedin.com/in/winsten-coellins",
+  github: "https://github.com/winstencoellins",
 } as const;
 
 export const navLinks = [

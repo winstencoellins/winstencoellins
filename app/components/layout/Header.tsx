@@ -41,8 +41,8 @@ export function Header() {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "border-b border-border bg-background/80 backdrop-blur-xl"
+        scrolled || menuOpen
+          ? "border-b border-border bg-background/95 backdrop-blur-xl"
           : "bg-transparent"
       }`}
     >
@@ -83,7 +83,7 @@ export function Header() {
             </Button>
             <button
               type="button"
-              className="flex h-9 w-9 items-center justify-center rounded-full border border-border md:hidden"
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-border bg-surface text-foreground transition-colors hover:bg-foreground/5 md:hidden"
               aria-expanded={menuOpen}
               aria-label="Toggle menu"
               onClick={() => setMenuOpen(!menuOpen)}

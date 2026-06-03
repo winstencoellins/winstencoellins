@@ -5,8 +5,8 @@
 I develop software from concept through launch—focused on clear architecture, thoughtful user experiences, and outcomes teams can measure and trust.
 
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/winstencoellins)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com)
-[![Email](https://img.shields.io/badge/Email-hello@winstencoellins.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:hello@winstencoellins.com)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/winsten-coellins)
+[![Email](https://img.shields.io/badge/Email-winstencoellins13@gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:winstencoellins13@gmail.com)
 
 ---
 
