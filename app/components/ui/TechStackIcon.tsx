@@ -7,6 +7,7 @@ type TechStackIconProps = {
   name: string;
   icon?: string;
   color?: string;
+  src?: string;
 };
 
 function iconSrc(slug: string, color?: string) {
@@ -15,10 +16,10 @@ function iconSrc(slug: string, color?: string) {
     : `https://cdn.simpleicons.org/${slug}`;
 }
 
-export function TechStackIcon({ name, icon, color }: TechStackIconProps) {
+export function TechStackIcon({ name, icon, color, src }: TechStackIconProps) {
   const [failed, setFailed] = useState(false);
 
-  if (!icon || failed) {
+  if ((!icon && !src) || failed) {
     return (
       <span className="px-1 text-center text-[10px] font-semibold leading-tight text-foreground">
         {name}
@@ -28,7 +29,7 @@ export function TechStackIcon({ name, icon, color }: TechStackIconProps) {
 
   return (
     <Image
-      src={iconSrc(icon, color)}
+      src={src ?? iconSrc(icon!, color)}
       alt={`${name} logo`}
       width={36}
       height={36}

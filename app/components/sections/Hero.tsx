@@ -46,9 +46,16 @@ export function Hero() {
             <p className="mt-4 max-w-md text-base leading-relaxed text-muted md:text-lg">
               {site.bio}
             </p>
-            <div className="mt-8">
+            <div className="mt-8 flex flex-wrap gap-3">
               <Button href="#contact" variant="primary">
                 Get in Touch
+              </Button>
+              <Button
+                href={site.resume}
+                variant="secondary"
+                download="winstencoellins_resume.pdf"
+              >
+                Download Resume
               </Button>
             </div>
           </motion.div>

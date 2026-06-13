@@ -67,6 +67,7 @@ export function TechStack() {
                       name={tech.name}
                       icon={"icon" in tech ? tech.icon : undefined}
                       color={"color" in tech && tech.color ? tech.color : undefined}
+                      src={"src" in tech ? tech.src : undefined}
                     />
                   </motion.div>
                 ))}

@@ -10,6 +10,7 @@ type ButtonProps = {
   variant?: "primary" | "secondary" | "ghost";
   className?: string;
   external?: boolean;
+  download?: boolean | string;
 };
 
 const base =
@@ -29,8 +30,21 @@ export function Button({
   variant = "primary",
   className = "",
   external,
+  download,
 }: ButtonProps) {
   const classes = `${base} ${variants[variant]} ${className}`;
+
+  if (download !== undefined) {
+    return (
+      <a
+        href={href}
+        className={classes}
+        download={download === true ? "" : download}
+      >
+        {children}
+      </a>
+    );
+  }
 
   if (external) {
     return (
