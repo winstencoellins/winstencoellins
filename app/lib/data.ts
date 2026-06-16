@@ -1,8 +1,9 @@
-import cherrySkyKost from "@/public/images/cherry-sky-kost.png";
+import cherrySkyLiving from "@/public/images/cherry-sky-living.png";
 import mitraLajuInterocean from "@/public/images/mitra-laju-interocean.png";
 import chezBakeryCafe from "@/public/images/chez-bakery.png";
 import quantumSports from "@/public/images/quantum-sports.png";
 import yanksBritsEnglishInstitute from "@/public/images/yanks-and-brits.png";
+import chinergyShenindo from "@/public/images/chinergy-shenindo.png";
 
 export const site = {
   name: "Winsten Coellins",
@@ -32,9 +33,9 @@ export const experience = [
     company: "Wilmar Consultancy Services",
     role: "Software Engineer",
     period: "Present",
-    initial: "WCS",
+    initial: "WIL",
     description:
-      "Leading the migration of enterprise applications from OutSystems to a modern Next.js and NestJS architecture, leveraging AI-assisted development to accelerate delivery, enhance code quality, and improve scalability and maintainability.",
+      "Leading and mentoring teams in the migration of enterprise applications from OutSystems to a modern Next.js and NestJS architecture, leveraging AI-assisted development to accelerate delivery, enhance code quality, and improve scalability and maintainability.",
   },
   {
     company: "Umify Pte Ltd",
@@ -56,7 +57,7 @@ export const experience = [
     company: "University of Wisconsin-Madison",
     role: "IT Assistant",
     period: "2022 - 2023",
-    initial: "UW-M",
+    initial: "UWM",
     description:
       "Established a barcode scanning system to optimize item check-in and check-out workflows, while developing accessible web solutions using semantic HTML to ensure accurate screen-reader support for students with disabilities.",
   },
@@ -64,29 +65,38 @@ export const experience = [
 
 export const freelanceProjects = [
   {
-    title: "Tenant Management System",
-    client: "Sky Cherry Kost",
+    title: "Property Management System",
+    client: "Cherry Sky Living",
     period: "2026",
     description:
-      "Full-stack admin dashboard with authentication, role-based access, and reporting—delivered on a fixed timeline as a freelance engagement.",
+      "A Property Management System is a platform that helps landlords and property managers manage properties, units, tenant leases, rent payments, bookkeeping, and lease renewal requests through a centralized dashboard.",
     href: "#projects",
-    initial: "CSK",
+    initial: "CSL",
   },
   {
     title: "Freight Forwarding System",
     client: "PT. Mitra Laju Interocean",
     period: "2026",
     description:
-      "Built data visualization and export features for a growing product team, improving how stakeholders tracked key performance metrics.",
+      "A Freight Forwarding System is a logistics platform that manages shipments, documentation, tracking, invoicing, and user roles to streamline freight operations and customer services.",
     href: "#projects",
     initial: "MLI",
+  },
+  {
+    title: "Corporate Website",
+    client: "CV. Chinergy Shenindo",
+    period: "2026",
+    description:
+      "A Corporate Website for Chinergy Shenindo that showcases the company's profile, services, products, and projects, helping potential clients learn about the business and submit inquiries online.",
+    href: "#projects",
+    initial: "CS",
   },
   {
     title: "Court Scheduling System",
     client: "Quantum Sports",
     period: "2025",
     description:
-      "Built a court scheduling system with availability management and streamlined operations for facility staff.",
+      "A Court Scheduling System is a platform that allows users to book courts, make online payments, and manage reservations, while providing administrators with tools for scheduling, bookkeeping, and business analytics.",
     href: "#projects",
     initial: "QS",
   },
@@ -95,18 +105,18 @@ export const freelanceProjects = [
     client: "Chez Bakery & Cafe",
     period: "2025",
     description:
-    "Responsive marketing site with CMS-friendly structure, performance-focused delivery, and a polished handoff for the client team.",
+    "A Content Management System is a platform that enables administrators to manage and publish content, categories, and listings through an intuitive dashboard for display on a public website.",
     href: "#projects",
     initial: "CH",
   },
   {
-    title: "Academic Operational Management System (AOMS)",
+    title: "Education Management System",
     client: "Yanks & Brits English Institute",
     period: "2024",
     description:
-      "Designed and implemented REST APIs and third-party integrations to connect existing tools into a single, maintainable workflow.",
+      "An Education Management System is a platform that manages courses, students, teachers, class schedules, payroll, bookkeeping, and performance tracking to streamline educational operations.",
     href: "#projects",
-    initial: "YB",
+    initial: "YNB",
   },
 ] as const;
 
@@ -170,37 +180,44 @@ export const projects = [
     title: "Freight Forwarding System",
     category: "Logistics",
     summary:
-      "Full-stack dashboard with role-based auth, real-time metrics, and a normalized Postgres schema.",
+      "A freight forwarding system is a logistics platform that manages shipment bookings, documentation, tracking, and customs processes, with role-based user authorization to control access for admins, operators, customers, and agents.",
     image: mitraLajuInterocean,
   },
   {
     title: "Court Scheduling System",
     category: "Sports & Recreation",
     summary:
-      "Court booking and scheduling platform with availability management and streamlined operations for facility staff.",
+      "A court scheduling system is a web-based platform that allows users to book courts, make online payments, and manage reservations, while providing administrators with a dashboard for scheduling management, bookkeeping, payment tracking, and business analytics.",
     image: quantumSports,
   },
   {
-    title: "Tenant Management System",
-    category: "Property Management",
+    title: "Property Management System",
+    category: "Real Estate",
     summary:
-      "Admin dashboard with authentication, role-based access, and reporting for property and tenant workflows.",
-    image: cherrySkyKost,
+      "A Property Management System is a centralized platform that enables landlords and property managers to manage properties, units, tenant leases, rent collection, bookkeeping, maintenance requests, and occupancy records, while allowing tenants to log in, view their lease details, make payments, and submit lease renewal requests online.",
+    image: cherrySkyLiving,
   },
   {
-    title: "Academic Operational Management System (AOMS)",
+    title: "Education Management System",
     category: "Education",
     summary:
-      "Academic operational management system with role-based auth, real-time metrics, and a normalized Postgres schema.",
+      "An Education Management System is an end-to-end solution for managing courses, student enrollment, teacher scheduling, lesson delivery, payroll calculations, financial records, performance tracking, and marketing commissions within a single integrated platform.",
     image: yanksBritsEnglishInstitute,
   },
   {
     title: "Content Management System (CMS)",
     category: "Marketing",
     summary:
-      "Responsive marketing site with CMS-friendly structure, performance-focused delivery, and a polished client handoff.",
+      "A Content Management System is a platform that allows business owners to manage menu categories and menu items through an admin dashboard, automatically organizing and displaying them on a public-facing website for customers to browse.",
     image: chezBakeryCafe,
   },
+  {
+    title: "Corporate Website",
+    category: "Industrial Trading & Sourcing Company",
+    summary:
+      "A corporate landing page that showcases Chinergy Shenindo's company profile, services, products, projects, and contact information, helping potential clients learn about the business and connect for inquiries or partnerships.",
+    image: chinergyShenindo,
+  }
 ] as const;
 
 export const socialLinks = [
