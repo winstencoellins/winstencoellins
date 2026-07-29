@@ -8,6 +8,7 @@ type TechStackIconProps = {
   icon?: string;
   color?: string;
   src?: string;
+  size?: "sm" | "md";
 };
 
 function iconSrc(slug: string, color?: string) {
@@ -16,13 +17,21 @@ function iconSrc(slug: string, color?: string) {
     : `https://cdn.simpleicons.org/${slug}`;
 }
 
-export function TechStackIcon({ name, icon, color, src }: TechStackIconProps) {
+export function TechStackIcon({
+  name,
+  icon,
+  color,
+  src,
+  size = "sm",
+}: TechStackIconProps) {
   const [failed, setFailed] = useState(false);
+  const dim = size === "md" ? 36 : 24;
+  const className = size === "md" ? "h-9 w-9 object-contain" : "h-6 w-6 object-contain";
 
   if ((!icon && !src) || failed) {
     return (
       <span className="px-1 text-center text-[10px] font-semibold leading-tight text-foreground">
-        {name}
+        {name.slice(0, 2)}
       </span>
     );
   }
@@ -31,9 +40,9 @@ export function TechStackIcon({ name, icon, color, src }: TechStackIconProps) {
     <Image
       src={src ?? iconSrc(icon!, color)}
       alt={`${name} logo`}
-      width={36}
-      height={36}
-      className="h-9 w-9 object-contain"
+      width={dim}
+      height={dim}
+      className={className}
       unoptimized
       onError={() => setFailed(true)}
     />

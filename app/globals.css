@@ -1,25 +1,24 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f7f7f5;
+  --background: #f5f7fb;
   --surface: #ffffff;
-  --foreground: #111111;
-  --muted: #7a7a7a;
-  --border: #e5e5e5;
-  --accent: #000000;
-  --shadow: 0 1px 3px rgb(0 0 0 / 0.04), 0 4px 24px rgb(0 0 0 / 0.04);
-  --shadow-hover: 0 4px 12px rgb(0 0 0 / 0.06), 0 12px 40px rgb(0 0 0 / 0.08);
-}
-
-.dark {
-  --background: #0a0a0a;
-  --surface: #141414;
-  --foreground: #f5f5f5;
-  --muted: #a3a3a3;
-  --border: #262626;
-  --accent: #ffffff;
-  --shadow: 0 1px 3px rgb(0 0 0 / 0.3), 0 4px 24px rgb(0 0 0 / 0.2);
-  --shadow-hover: 0 4px 12px rgb(0 0 0 / 0.4), 0 12px 40px rgb(0 0 0 / 0.3);
+  --foreground: #16181d;
+  --muted: #6b7280;
+  --border: rgb(22 24 29 / 0.08);
+  --accent: #1c2434;
+  --accent-foreground: #ffffff;
+  --highlight: #3d6b8c;
+  --glass: rgb(255 255 255 / 0.28);
+  --glass-strong: rgb(255 255 255 / 0.4);
+  --glass-border: rgb(255 255 255 / 0.45);
+  --glass-border-soft: rgb(255 255 255 / 0.35);
+  --orb-a: #d9e6f5;
+  --orb-b: #e8eef6;
+  --orb-c: #f0f4f8;
+  --shadow: 0 1px 2px rgb(22 24 29 / 0.04), 0 8px 24px rgb(22 24 29 / 0.04);
+  --shadow-glass: 0 4px 24px rgb(22 24 29 / 0.03), inset 0 1px 0 rgb(255 255 255 / 0.5);
+  --shadow-hover: 0 8px 28px rgb(22 24 29 / 0.05), inset 0 1px 0 rgb(255 255 255 / 0.65);
 }
 
 @theme inline {
@@ -29,20 +28,26 @@
   --color-muted: var(--muted);
   --color-border: var(--border);
   --color-accent: var(--accent);
-  --font-sans: var(--font-inter), var(--font-geist-sans), system-ui, sans-serif;
-  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
-  --radius-card: 14px;
-  --shadow-card: var(--shadow);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-highlight: var(--highlight);
+  --color-glass: var(--glass);
+  --color-glass-strong: var(--glass-strong);
+  --color-glass-border: var(--glass-border);
+  --font-sans: var(--font-jakarta), system-ui, sans-serif;
+  --font-display: var(--font-instrument), Georgia, serif;
+  --font-mono: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+  --radius-card: 1.25rem;
+  --shadow-card: var(--shadow-glass);
   --shadow-card-hover: var(--shadow-hover);
 }
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 5.5rem;
+  scroll-padding-top: 6rem;
 }
 
 section[id] {
-  scroll-margin-top: 5.5rem;
+  scroll-margin-top: 6rem;
 }
 
 body {
@@ -52,6 +57,102 @@ body {
 }
 
 ::selection {
-  background: var(--foreground);
-  color: var(--background);
+  background: rgb(61 107 140 / 0.18);
+  color: var(--foreground);
+}
+
+.glass {
+  background: var(--glass);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  border: 1px solid var(--glass-border-soft);
+  box-shadow: var(--shadow-glass);
+}
+
+.glass-strong {
+  background: var(--glass-strong);
+  backdrop-filter: blur(18px) saturate(150%);
+  -webkit-backdrop-filter: blur(18px) saturate(150%);
+  border: 1px solid var(--glass-border-soft);
+  box-shadow: var(--shadow-glass);
+}
+
+.glass-nav {
+  background: rgb(255 255 255 / 0.88);
+  backdrop-filter: blur(28px) saturate(180%);
+  -webkit-backdrop-filter: blur(28px) saturate(180%);
+  border: 1px solid rgb(255 255 255 / 0.65);
+  box-shadow:
+    0 8px 32px rgb(22 24 29 / 0.06),
+    inset 0 1px 0 rgb(255 255 255 / 0.9);
+}
+
+.atmosphere {
+  background:
+    radial-gradient(ellipse 80% 60% at 10% 20%, var(--orb-a), transparent 55%),
+    radial-gradient(ellipse 70% 50% at 90% 10%, var(--orb-b), transparent 50%),
+    radial-gradient(ellipse 60% 40% at 70% 80%, var(--orb-c), transparent 45%),
+    radial-gradient(ellipse 50% 35% at 20% 90%, #eef2f7, transparent 50%),
+    linear-gradient(180deg, #fafbfd 0%, #f3f6fa 45%, #eef2f7 100%);
+}
+
+@keyframes orb-drift {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(2%, -3%) scale(1.04);
+  }
+  66% {
+    transform: translate(-2%, 2%) scale(0.97);
+  }
+}
+
+@keyframes soft-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.orb-drift {
+  animation: orb-drift 18s ease-in-out infinite;
+}
+
+.orb-drift-delayed {
+  animation: orb-drift 22s ease-in-out infinite reverse;
+}
+
+.soft-float {
+  animation: soft-float 7s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .orb-drift,
+  .orb-drift-delayed,
+  .soft-float {
+    animation: none;
+  }
+}
+
+/* Soft reveal once the intro loader exits */
+html[data-app-ready="false"] .app-shell {
+  opacity: 0;
+}
+
+html[data-app-ready="true"] .app-shell {
+  opacity: 1;
+  transition: opacity 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html[data-app-ready="false"] .app-shell,
+  html[data-app-ready="true"] .app-shell {
+    opacity: 1;
+    transition: none;
+  }
 }

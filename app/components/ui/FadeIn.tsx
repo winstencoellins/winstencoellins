@@ -12,13 +12,11 @@ type FadeInProps = {
   children: ReactNode;
   className?: string;
   delay?: number;
-  id?: string;
 };
 
-export function FadeIn({ children, className, delay = 0, id }: FadeInProps) {
+export function FadeIn({ children, className, delay = 0 }: FadeInProps) {
   return (
-    <motion.section
-      id={id}
+    <motion.div
       className={className}
       initial="hidden"
       whileInView="visible"
@@ -27,7 +25,7 @@ export function FadeIn({ children, className, delay = 0, id }: FadeInProps) {
       variants={variants}
     >
       {children}
-    </motion.section>
+    </motion.div>
   );
 }
 
@@ -62,7 +60,11 @@ export function FadeInItem({
   className?: string;
 }) {
   return (
-    <motion.div className={className} variants={variants}>
+    <motion.div
+      className={className}
+      variants={variants}
+      transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+    >
       {children}
     </motion.div>
   );
